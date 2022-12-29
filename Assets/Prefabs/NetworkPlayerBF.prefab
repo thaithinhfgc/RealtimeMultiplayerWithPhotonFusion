@@ -161,6 +161,7 @@ GameObject:
   - component: {fileID: -3884894857238057876}
   - component: {fileID: -2591096365792419990}
   - component: {fileID: 7355562526168530024}
+  - component: {fileID: 5573698077694323196}
   m_Layer: 0
   m_Name: NetworkPlayerBF
   m_TagString: Untagged
@@ -257,6 +258,7 @@ MonoBehaviour:
   - {fileID: 3356372975900062256}
   - {fileID: 357712603320771292}
   - {fileID: 7355562526168530024}
+  - {fileID: 5573698077694323196}
   SimulationBehaviours: []
 --- !u!114 &5666417505470452093
 MonoBehaviour:
@@ -353,8 +355,8 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
+  MinDistance: 2
+  MaxDistance: 100
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -389,7 +391,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 0.997
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -460,6 +462,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _interpolationDataSource: 0
+--- !u!114 &5573698077694323196
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1807715664781142307}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03a053f1135ef5541bf9000c2d36e753, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _interpolationDataSource: 0
+  _isFiring: 0
+  fireparticleSystem: {fileID: 0}
+  aimPoint: {fileID: 0}
+  collisionLayers:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1 &1807715665369073693
 GameObject:
   m_ObjectHideFlags: 0
