@@ -29,6 +29,35 @@ public class WeaponHandler : NetworkBehaviour
         }
         StartCoroutine(FireEffectCO());
         Runner.LagCompensation.Raycast(aimPoint.position, aimForwardVector, 100f, Object.InputAuthority, out var hitInfo, collisionLayers, HitOptions.IncludePhysX);
+
+        float hitDistance = 100;
+        bool isHitOtherPlayer = false;
+
+        if (hitDistance > 0)
+        {
+            hitDistance = hitInfo.Distance;
+        }
+
+        if (hitInfo.Hitbox != null)
+        {
+            Debug.Log($"{Time.time} {transform.name} hit hitbox {hitInfo.Hitbox.transform.root.name}");
+            isHitOtherPlayer = true;
+        }
+        else if (hitInfo.Collider != null)
+        {
+            Debug.Log($"{Time.time} {transform.name} hit physx collider {hitInfo.Collider.transform.root.name}");
+        }
+
+
+        if (isHitOtherPlayer)
+        {
+            Debug.DrawRay(aimPoint.position, aimForwardVector * hitDistance, Color.red, 1f);
+        }
+        else
+        {
+            Debug.DrawRay(aimPoint.position, aimForwardVector * hitDistance, Color.green, 1f);
+        }
+
         lastTimeFired = Time.time;
 
     }
